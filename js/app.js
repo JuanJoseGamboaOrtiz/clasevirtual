@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded',async(e)=>{
         }
     };
     console.log("hola");
-    res= await fetch('http://localhost/clasevirtual/uploads/persona/khjkhjk' ,options);
+    res= await fetch('http://localhost/clasevirtual/uploads/persona/123' ,options);
     resultado= await res.json();
 
     console.log(resultado);

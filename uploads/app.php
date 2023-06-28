@@ -23,10 +23,10 @@
     
         });
 
-        $router->get('/{nombre}',function($nombre){
+        $router->get('/{DNI}',function($dni){
             $db= new Connect();
-            $res= $db->con->prepare("SELECT * FROM persona WHERE nombre LIKE :nombre");
-            $res->bindValue('nombre',$nombre);
+            $res= $db->con->prepare("SELECT * FROM persona WHERE DNI LIKE CONCAT('%', :dni, '%')");
+            $res->bindValue('dni',$dni);
             $res->execute();    
             $res = $res->fetchAll(PDO::FETCH_ASSOC);
             echo json_encode($res);
